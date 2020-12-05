@@ -4,7 +4,7 @@
 #
 
 #
-# Device settingss
+# Device settings
 #
 BUILD_PATHS=("$HOME/ameizu" "$HOME/asamsung" "$HOME/asamsung" "$HOME/asamsung") # Paths to Android sources
 ANDROID_VERSIONS=("7" "11" "11" "11")                                           # Android versions
