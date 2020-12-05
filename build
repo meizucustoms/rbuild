@@ -15,7 +15,7 @@ DEVICE_TABLE=("m1721" "s3ve3gxx" "s3ve3gjv" "s3ve3gds")                         
 # ANDROID_VERSIONS=("device #1 android version" "device #2 android version")
 # DEVICE_TABLE=("device #1" "device #2")
 #
-# Say thanks to bash's power, structures? What is the structures?
+# Say thanks to bash's power, structures array? What is the structures array?
 #
 
 #
