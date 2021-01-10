@@ -19,7 +19,7 @@ DEVICE_TABLE=("i_wanna_sell_mixer")       # Device codenames
 # Lunch settings
 #
 ROM_LUNCH_PREFIXES=("aosp_")                # All ROMs lunch prefixes, e.g. aosp_, pixel_, lineage_, rr_, mokee_, ...
-AVALIBLE_BUILD_VARIANTS=("eng" "userdebug") # All device build variants (eng, userdebug, user are available for LOS and AOSP.)
+AVAILABLE_BUILD_VARIANTS=("eng" "userdebug") # All device build variants (eng, userdebug, user are available for LOS and AOSP.)
 
 #
 # Old Android building settings (older than 9)
@@ -98,8 +98,8 @@ function logFatal() {
 function configurator() {
   for ((a=0;$a<${#DEVICE_TABLE[@]};a++)); do
     for ((b=0;$b<${#ROM_LUNCH_PREFIXES[@]};b++)); do
-      for ((c=0;$c<${#AVALIBLE_BUILD_VARIANTS[@]};c++)); do
-        ALLBUILDVARIANTS+=("${ROM_LUNCH_PREFIXES[$b]}${DEVICE_TABLE[$a]}-${AVALIBLE_BUILD_VARIANTS[$c]}")
+      for ((c=0;$c<${#AVAILABLE_BUILD_VARIANTS[@]};c++)); do
+        ALLBUILDVARIANTS+=("${ROM_LUNCH_PREFIXES[$b]}${DEVICE_TABLE[$a]}-${AVAILABLE_BUILD_VARIANTS[$c]}")
       done
     done
   done
