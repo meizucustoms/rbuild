@@ -493,12 +493,12 @@ function main() {
 
   configure
   setsrccfg
-  buildconfig "$1"PATHS
+  buildconfig
 
   if [ $(getArg --lunch) = "false" ]; then
-    build "$1"
+    build
     if [ $(getArg --flash) = "true" ]; then
-     flash "$1" "$2"
+     flash
     fi
   fi
 }
