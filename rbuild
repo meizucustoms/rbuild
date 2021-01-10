@@ -9,8 +9,8 @@
 #
 # Device settings
 #
-BUILD_PATHS=("$HOME/ameizu") # Paths to Android sources
-DEVICE_TABLE=("m1721")       # Device codenames
+BUILD_PATHS=("$HOME/xiaomeme")            # Paths to Android sources
+DEVICE_TABLE=("i_wanna_sell_mixer")       # Device codenames
 # Example:
 # BUILD_PATHS=("device #1 path" "device #2 path")
 # DEVICE_TABLE=("device #1" "device #2")
