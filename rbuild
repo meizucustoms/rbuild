@@ -473,6 +473,10 @@ function checkArguments() {
   if [ "$(getArg --clean)" = "true" ] && [ "$(getArg --installclean)" = "true" ]; then
     logFatal checks "Arguments logical error."
   fi
+  
+  if [ "${#BUILD_PATHS[@]}" != "${#DEVICE_TABLE[@]}" ]; then
+    logFatal checks "In-script settings error: size of BUILD_PATHS and DEVICE_TABLE is different."
+  fi
 
   return 0
 }
@@ -489,7 +493,7 @@ function main() {
 
   configure
   setsrccfg
-  buildconfig "$1"
+  buildconfig "$1"PATHS
 
   if [ $(getArg --lunch) = "false" ]; then
     build "$1"
