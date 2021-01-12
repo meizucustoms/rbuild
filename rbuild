@@ -111,7 +111,13 @@ function configurator() {
   echo -e ${text_bold}"Please, choose one:"${text_reset}
   echo -ne ${text_bold}${color_yellow}"@bin/rbuild> "${text_reset}
   read choice
-  [ -z "$choice"ccacheStart
+  [ -z "$choice" ] && logFatal config "No choice given."
+  for ((d=0;$d<${#ALLBUILDVARIANTS[@]};d++)); do
+    if [ "$choice" = "${ALLBUILDVARIANTS[$d]}" ] || [ "$(expr $choice - 1 2>/dev/null)" = "$d" ]; then
+      CHOSENDEVICE="${ALLBUILDVARIANTS[$d]}"
+      break
+    fi
+  done
 
   if [ -z $CHOSENDEVICE ]; then
     logFatal config "Lunch item $choice not found."
