@@ -174,6 +174,10 @@ function ccacheStart() {
   export CCACHE_DIR="$HOME/.cachebuild"
 }
 
+function getMajorDroidVer() {
+  echo "$(echo $DEVICEANDROID | sed 's/.[0-9]//g')"
+}
+
 function buildconfig() {
   [ ! -f $DEVICEDIR/build/envsetup.sh ] && logFatal config "envsetup.sh not found!"
 
@@ -214,7 +218,7 @@ function buildconfig() {
     export _JAVA_OPTIONS="-Xmx4G"
   fi
 
-  if [ $DEVICEANDROID -lt 9 ]; then
+  if [ "$(getMajorDroidVer)" -lt "9" ]; then
     log config "Fixing build for Android older than 9..."
     export LC_ALL=C
     [ ! -d $PYTHON_VENV_DIR ] && logFatal build "Please create Python 2.7 virtualenv in $PYTHON_VENV_DIR."
