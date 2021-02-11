@@ -1,0 +1,1 @@
+Rework flash() function, it is buggy and can't be runned separately from build()
