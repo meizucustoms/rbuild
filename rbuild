@@ -175,7 +175,11 @@ function ccacheStart() {
 }
 
 function getMajorDroidVer() {
-  echo "$(echo $DEVICEANDROID | sed 's/.[0-9]//g')"
+  if [ ! -z "$(echo $DEVICEANDROID | grep '\.')" ]; then
+    echo "$(echo $DEVICEANDROID | sed 's/.[0-9]//g')"
+  else
+    echo $DEVICEANDROID
+  fi
 }
 
 function buildconfig() {
